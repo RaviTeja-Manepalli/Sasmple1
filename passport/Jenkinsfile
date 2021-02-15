@@ -5,27 +5,27 @@ pipeline {
         stage('Clean')
         {
              steps {
-                    sh 'mvn -f passport/pom.xml clean'
+                    bat 'mvn -f passport/pom.xml clean'
                 
             }
         }
         stage('Compile')
         {
              steps {
-                    sh 'mvn -f passport/pom.xml compile'
+                    bat 'mvn -f passport/pom.xml compile'
                 
             }
         }
        
         stage('Package') {
             steps {
-                    sh 'mvn -f passport/pom.xml package'
+                    bat 'mvn -f passport/pom.xml package'
                 
             }
         }
         stage('Test') { 
             steps {
-                sh 'mvn -f passport/pom.xml test' 
+                bat 'mvn -f passport/pom.xml test' 
             }
             
         }
