@@ -20,15 +20,10 @@ pipeline {
                 
             }
         }
-        stage('Test') { 
-            steps {
-                bat 'mvn -f passport/pom.xml test' 
-            }
-            
-        }
+       
         stage( 'SonarQube analysis'){
             steps {
-              withSonarQubeEnv('sonar') {
+              withSonarQubeEnv('localsonar') {
                 bat 'mvn sonar:localsonar'
               }
             }
