@@ -13,13 +13,6 @@ pipeline {
                 
             }
         }
-        stage('Compile')
-        {
-             steps {
-                    bat 'mvn -f passport/pom.xml compile'
-                
-            }
-        }
        
         stage('Package') {
             steps {
