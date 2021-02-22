@@ -24,7 +24,7 @@ pipeline {
         stage( 'SonarQube analysis'){
             steps {
               withSonarQubeEnv('localsonar') {
-                bat 'mvn sonar:sonar'
+                bat 'mvn -f passport/pom.xml sonar:sonar'
               }
             }
         }
