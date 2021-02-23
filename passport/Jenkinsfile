@@ -31,7 +31,7 @@ pipeline {
         }
         stage('collect artifact'){
      steps{
-     archiveArtifacts artifacts: 'target', followSymlinks: false
+     archiveArtifacts artifacts: 'passport/target/*.jar', followSymlinks: false
      }
      }
      stage('deploy to artifactory')
@@ -43,7 +43,7 @@ pipeline {
     spec: '''{
           "files": [
             {
-              "pattern": "target",
+              "pattern": "passport/target/*.jar",
               "target": "arti-maven-dev-loc"
             }
          ]
