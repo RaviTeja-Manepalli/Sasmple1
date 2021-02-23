@@ -6,12 +6,7 @@ pipeline {
     }
     
     stages {
-        stage('git')
-        {
-            steps{
-                git url: 'https://github.com/RaviTeja-Manepalli/Sasmple1.git'
-            }
-        }
+        
         stage('Clean')
         {
              steps {
